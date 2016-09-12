@@ -1,0 +1,26 @@
+{
+  "implementation": "dfsp-account",
+  "repl": false,
+  "console": false,
+  "log": false,
+  "debug": true,
+  "workDir": "./tmp",
+  "masterBus": {
+    "logLevel": "error",
+    "socket": "dfsp-account"
+  },
+  "workerBus": {
+    "logLevel": "error"
+  },
+  "performance": {
+    "id": "dfsp-account",
+    "influx": {
+      "host": "influxdb",
+      "port": 4444
+    }
+  },
+  "script": {
+    "mock": true
+  },
+  "db": false
+}
