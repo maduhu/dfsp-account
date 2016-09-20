@@ -3,11 +3,14 @@
   "@actorId" CHARACTER varying
 ) RETURNS TABLE(
   "accountId" CHARACTER varying(25),
-  "actorId" CHARACTER varying(25)
+  "actorId" CHARACTER varying(25),
+  "isSingleResult" boolean
 )
 AS
 $body$
-  SELECT *
+  SELECT
+  	*,
+	true AS "isSingleResult"
   FROM account.account AS a
   WHERE
   	("@accountId" IS NULL OR a."accountId" = "@accountId")

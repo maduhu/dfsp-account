@@ -1,7 +1,8 @@
 ﻿CREATE OR REPLACE FUNCTION account."account.remove"(
   "@accountId" CHARACTER varying(25)
 ) RETURNS TABLE(
-  "accountId" CHARACTER varying(25)
+  "accountId" CHARACTER varying(25),
+  "isSingleResult" boolean
 )
 AS
 $body$
@@ -11,7 +12,8 @@ $body$
     RETURNING *
   )
   SELECT
-    a."accountId"
+    a."accountId",
+	  true AS "isSingleResult"
   FROM a
 $body$
 LANGUAGE SQL

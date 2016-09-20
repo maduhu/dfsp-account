@@ -3,7 +3,8 @@
   "@actorId" CHARACTER varying(25)
 ) RETURNS TABLE(
   "accountId" CHARACTER varying(25),
-  "actorId" CHARACTER varying(25)
+  "actorId" CHARACTER varying(25),
+  "isSingleResult" boolean
 )
 AS
 $body$
@@ -13,7 +14,8 @@ $body$
     RETURNING *
   )
   SELECT
-    *
+    *,
+    true as "isSingleResult"
   FROM a
 $body$
 LANGUAGE SQL
