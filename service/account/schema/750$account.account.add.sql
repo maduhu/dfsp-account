@@ -7,13 +7,13 @@
 )
 AS
 $body$
-  WITH x as (
+  WITH a as (
     INSERT INTO account.account ("accountId", "actorId")
     VALUES ("@accountId", "@actorId")
     RETURNING *
   )
   SELECT
     *
-  FROM x
+  FROM a
 $body$
 LANGUAGE SQL
