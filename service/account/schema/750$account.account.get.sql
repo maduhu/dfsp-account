@@ -1,8 +1,8 @@
 ﻿CREATE OR REPLACE FUNCTION account."account.get"(
-  "@accountId" CHARACTER varying,
+  "@accountNumber" CHARACTER varying,
   "@actorId" CHARACTER varying
 ) RETURNS TABLE(
-  "accountId" CHARACTER varying(25),
+  "accountNumber" CHARACTER varying(25),
   "actorId" CHARACTER varying(25),
   "isSingleResult" boolean
 )
@@ -13,7 +13,7 @@ $body$
 	true AS "isSingleResult"
   FROM account.account AS a
   WHERE
-  	("@accountId" IS NULL OR a."accountId" = "@accountId")
+  	("@accountNumber" IS NULL OR a."accountNumber" = "@accountNumber")
 	  AND
 	("@actorId" is NULL or a."actorId" = "@actorId")
 $body$

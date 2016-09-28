@@ -1,16 +1,16 @@
 ﻿CREATE OR REPLACE FUNCTION account."account.add"(
-  "@accountId" CHARACTER varying(25),
+  "@accountNumber" CHARACTER varying(25),
   "@actorId" CHARACTER varying(25)
 ) RETURNS TABLE(
-  "accountId" CHARACTER varying(25),
+  "accountNumber" CHARACTER varying(25),
   "actorId" CHARACTER varying(25),
   "isSingleResult" boolean
 )
 AS
 $body$
   WITH a as (
-    INSERT INTO account.account ("accountId", "actorId")
-    VALUES ("@accountId", "@actorId")
+    INSERT INTO account.account ("accountNumber", "actorId")
+    VALUES ("@accountNumber", "@actorId")
     RETURNING *
   )
   SELECT
