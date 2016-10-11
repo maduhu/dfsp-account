@@ -1,3 +1,13 @@
+<a name="0.2.3"></a>
+## [0.2.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.2.1...v0.2.3) (2016-10-11)
+
+
+### Bug Fixes
+
+* skip tag ([4340f6c](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/4340f6c))
+
+
+
 <a name="0.2.1"></a>
 ## [0.2.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.2.0...v0.2.1) (2016-10-11)
 
