@@ -1,3 +1,13 @@
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.2.0...v0.2.1) (2016-10-11)
+
+
+### Bug Fixes
+
+* add .npmrc ([e86df0e](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/e86df0e))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.1.2...v0.2.0) (2016-10-11)
 
