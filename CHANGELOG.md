@@ -1,3 +1,19 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.1.2...v0.2.0) (2016-10-11)
+
+
+### Bug Fixes
+
+* fix circle ci build ([1d336cd](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/1d336cd))
+
+
+### Features
+
+* automate build ([d7d9bae](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/d7d9bae))
+* update dependencies ([298f315](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/298f315))
+
+
+
 <a name="0.1.2"></a>
 ## [0.1.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.1.1...v0.1.2) (2016-09-29)
 
