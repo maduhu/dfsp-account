@@ -1,3 +1,13 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.2.4...v0.3.0) (2016-10-13)
+
+
+### Features
+
+* changes related to requiring peer implementations from tests ([ab08fba](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/ab08fba))
+
+
+
 <a name="0.2.4"></a>
 ## [0.2.4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.2.3...v0.2.4) (2016-10-13)
 
