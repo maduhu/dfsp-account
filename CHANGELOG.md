@@ -1,3 +1,13 @@
+<a name="0.3.1"></a>
+## [0.3.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.3.0...v0.3.1) (2016-10-14)
+
+
+### Bug Fixes
+
+* fix publishing ([7d9e5d9](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/7d9e5d9))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.2.4...v0.3.0) (2016-10-13)
 
