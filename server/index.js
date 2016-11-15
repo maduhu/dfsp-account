@@ -7,5 +7,8 @@ module.exports = {
   modules: {
     identity: require('../service/identity'),
     account: require('../service/account')
+  },
+  validations: {
+    account: require('../service/account/api')
   }
 }
