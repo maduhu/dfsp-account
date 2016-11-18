@@ -1,20 +1,37 @@
 ﻿CREATE OR REPLACE FUNCTION account."account.get"(
-  "@accountNumber" CHARACTER varying,
-  "@actorId" CHARACTER varying
+  "@accountNumber" varchar(25)
 ) RETURNS TABLE(
-  "accountNumber" CHARACTER varying(25),
-  "actorId" CHARACTER varying(25),
+  "accountNumber" varchar(25),
+  "isDefault" boolean,
+  "actorId" varchar(25),
   "isSingleResult" boolean
 )
 AS
 $body$
-  SELECT
-  	*,
-	true AS "isSingleResult"
-  FROM account.account AS a
-  WHERE
-  	("@accountNumber" IS NULL OR a."accountNumber" = "@accountNumber")
-	  AND
-	("@actorId" is NULL or a."actorId" = "@actorId")
+  DECLARE
+    "@isDefault" boolean;
+    "@actorId" varchar(25);
+  BEGIN
+    SELECT
+        a."isDefault",
+        a."actorId"
+    INTO
+        "@isDefault",
+        "@actorId"
+    FROM
+      account.account AS a
+    WHERE
+      a."accountNumber" = "@accountNumber";
+
+    IF "@actorId" IS NULL THEN
+      RAISE EXCEPTION 'account.accountNotFound';
+    END IF;
+    RETURN QUERY
+      SELECT
+        "@accountNumber" AS "accountNumber",
+        "@isDefault" AS "isDefault",
+        "@actorId" AS "actorId",
+        true AS "isSingleResult";
+  END
 $body$
-LANGUAGE SQL
+LANGUAGE plpgsql;
