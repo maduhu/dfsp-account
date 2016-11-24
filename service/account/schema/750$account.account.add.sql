@@ -10,7 +10,14 @@
 )
 AS
 $body$
-  WITH a as (
+  WITH
+  u AS (
+    UPDATE account.account a
+    SET "isDefault" = false
+    WHERE "@isDefault" = true AND a."actorId" = "@actorId"
+    RETURNING *
+  ),
+  a AS (
     INSERT INTO account.account ("accountNumber", "actorId", "isDefault")
     VALUES ("@accountNumber", "@actorId", COALESCE("@isDefault", false))
     RETURNING *
