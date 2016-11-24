@@ -1,3 +1,21 @@
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.3.1...v0.4.0) (2016-11-21)
+
+
+### Bug Fixes
+
+* add initial validation object for account.account.get method ([b7efd74](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/b7efd74))
+* issue [#283](https://github.com/LevelOneProject/dfsp-account/issues/283) - DFSP License files are incorrect ([b74631c](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/b74631c))
+* update dependencies ([de0517e](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/de0517e))
+* validation changes ([edff3a7](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/edff3a7))
+
+
+### Features
+
+* add default account column and handle account not found case ([3798c68](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/3798c68))
+
+
+
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.3.0...v0.3.1) (2016-10-14)
 
