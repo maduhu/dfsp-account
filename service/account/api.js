@@ -31,5 +31,12 @@ module.exports = {
     auth: false,
     params: joi.any(),
     result: joi.any()
+  },
+  'account.edit': {
+    description: 'Edit account',
+    notes: '',
+    auth: false,
+    params: joi.any(),
+    result: joi.any()
   }
 }
