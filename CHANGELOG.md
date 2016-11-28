@@ -1,3 +1,13 @@
+<a name="0.5.1"></a>
+## [0.5.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.5.0...v0.5.1) (2016-11-28)
+
+
+### Bug Fixes
+
+* update dependencies ([7198b66](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/7198b66))
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.4.0...v0.5.0) (2016-11-28)
 
