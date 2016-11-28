@@ -1,3 +1,19 @@
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.4.0...v0.5.0) (2016-11-28)
+
+
+### Bug Fixes
+
+* add possibility to add default accounts ([a2d8bb0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/a2d8bb0))
+* update ut-tools ([dd0d4f4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/dd0d4f4))
+
+
+### Features
+
+* add procedure for account.account edit ([0338832](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/0338832))
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.3.1...v0.4.0) (2016-11-21)
 
