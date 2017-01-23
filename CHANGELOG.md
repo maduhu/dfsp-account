@@ -1,3 +1,14 @@
+<a name="0.5.3"></a>
+## [0.5.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.5.2...v0.5.3) (2017-01-23)
+
+
+### Bug Fixes
+
+* add more rules to ignore ([07b7e50](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/07b7e50))
+* update dependencies ([6ef9e05](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/6ef9e05))
+
+
+
 <a name="0.5.2"></a>
 ## [0.5.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.5.1...v0.5.2) (2016-12-16)
 
