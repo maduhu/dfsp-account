@@ -1,11 +1,13 @@
 CREATE OR REPLACE FUNCTION account."account.edit"(
   "@accountNumber" CHARACTER varying(25),
   "@actorId" CHARACTER varying(25),
-  "@isDefault" boolean
+  "@isDefault" boolean,
+  "@isSignatory" boolean
 ) RETURNS TABLE(
   "accountNumber" varchar(25),
   "isDefault" boolean,
   "actorId" varchar(25),
+  "isSignatory" boolean,
   "isSingleResult" boolean
 )
 AS
@@ -31,13 +33,14 @@ BEGIN
     account."account" AS a
   SET
     "isDefault" = "@isDefault",
-    "accountNumber" = "@accountNumber"
+    "accountNumber" = "@accountNumber",
+    "isSignatory" = COALESCE("@isSignatory", a."isSignatory")
   WHERE
     a."actorId" = "@actorId"
     AND a."accountNumber" = "@accountNumber";
 
   RETURN QUERY
-    SELECT * FROM account."account.get"("@accountNumber");
+    SELECT * FROM account."account.get"("@accountNumber", "@actorId");
 END;
 $body$
 LANGUAGE plpgsql;

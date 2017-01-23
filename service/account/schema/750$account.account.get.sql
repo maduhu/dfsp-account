@@ -1,29 +1,31 @@
 ﻿CREATE OR REPLACE FUNCTION account."account.get"(
-  "@accountNumber" varchar(25)
+  "@accountNumber" varchar(25),
+  "@actorId" varchar(25)
 ) RETURNS TABLE(
   "accountNumber" varchar(25),
   "isDefault" boolean,
   "actorId" varchar(25),
+  "isSignatory" boolean,
   "isSingleResult" boolean
 )
 AS
 $body$
   DECLARE
     "@isDefault" boolean;
-    "@actorId" varchar(25);
+    "@isSignatory" boolean;
   BEGIN
     SELECT
         a."isDefault",
-        a."actorId"
+        a."isSignatory"
     INTO
         "@isDefault",
-        "@actorId"
+        "@isSignatory"
     FROM
       account.account AS a
     WHERE
-      a."accountNumber" = "@accountNumber";
+      a."accountNumber" = "@accountNumber" and a."actorId" = "@actorId";
 
-    IF "@actorId" IS NULL THEN
+    IF "@isDefault" IS NULL THEN
       RAISE EXCEPTION 'account.accountNotFound';
     END IF;
     RETURN QUERY
@@ -31,6 +33,7 @@ $body$
         "@accountNumber" AS "accountNumber",
         "@isDefault" AS "isDefault",
         "@actorId" AS "actorId",
+        "@isSignatory" AS "isSignatory",
         true AS "isSingleResult";
   END
 $body$
