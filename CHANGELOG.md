@@ -1,3 +1,14 @@
+<a name="0.6.1"></a>
+## [0.6.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.6.0...v0.6.1) (2017-01-25)
+
+
+### Bug Fixes
+
+* account.account.add stored function ([eafd2fa](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/eafd2fa))
+* update ut-tools ([e0552d3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/e0552d3))
+
+
+
 <a name="0.6.0"></a>
 # [0.6.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.5.3...v0.6.0) (2017-01-23)
 
