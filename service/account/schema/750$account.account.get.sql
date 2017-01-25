@@ -12,18 +12,21 @@ AS
 $body$
   DECLARE
     "@isDefault" boolean;
+    "@actorIdOut" varchar(25);
     "@isSignatory" boolean;
   BEGIN
     SELECT
         a."isDefault",
+        a."actorId",
         a."isSignatory"
     INTO
         "@isDefault",
+        "@actorIdOut",
         "@isSignatory"
     FROM
       account.account AS a
     WHERE
-      a."accountNumber" = "@accountNumber" and a."actorId" = "@actorId";
+      a."accountNumber" = "@accountNumber" and ("@actorId" IS NULL OR a."actorId" = "@actorId");
 
     IF "@isDefault" IS NULL THEN
       RAISE EXCEPTION 'account.accountNotFound';
@@ -32,7 +35,7 @@ $body$
       SELECT
         "@accountNumber" AS "accountNumber",
         "@isDefault" AS "isDefault",
-        "@actorId" AS "actorId",
+        "@actorIdOut" AS "actorId",
         "@isSignatory" AS "isSignatory",
         true AS "isSingleResult";
   END
