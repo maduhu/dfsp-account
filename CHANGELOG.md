@@ -1,3 +1,13 @@
+<a name="0.6.3"></a>
+## [0.6.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.6.2...v0.6.3) (2017-03-14)
+
+
+### Bug Fixes
+
+* add possibility to inspect db ([90c695e](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/90c695e))
+
+
+
 <a name="0.6.2"></a>
 ## [0.6.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.6.1...v0.6.2) (2017-01-30)
 
