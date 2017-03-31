@@ -1,3 +1,19 @@
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.6.3...v0.7.0) (2017-03-31)
+
+
+### Bug Fixes
+
+* add missing dependancy ([eca5fe0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/eca5fe0))
+* return run ([8136010](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/8136010))
+
+
+### Features
+
+* add integration tests ([9c92361](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/9c92361))
+
+
+
 <a name="0.6.3"></a>
 ## [0.6.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.6.2...v0.6.3) (2017-03-14)
 
