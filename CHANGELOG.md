@@ -1,3 +1,13 @@
+<a name="0.7.1"></a>
+## [0.7.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.7.0...v0.7.1) (2017-04-03)
+
+
+### Bug Fixes
+
+* update ut-port-httpserver ([1fbdac4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/1fbdac4))
+
+
+
 <a name="0.7.0"></a>
 # [0.7.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.6.3...v0.7.0) (2017-03-31)
 
