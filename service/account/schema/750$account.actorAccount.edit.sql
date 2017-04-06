@@ -47,7 +47,6 @@ BEGIN
   UPDATE account."actorAccount" aa
   SET
     "isDefault" = "@isDefault",
-    "accountNumber" = "@accountNumber",
     "isSignatory" = COALESCE("@isSignatory", aa."isSignatory")
   WHERE
       aa."actorAccountId" = "@actorAccountId";

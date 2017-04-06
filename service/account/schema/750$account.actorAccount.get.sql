@@ -33,6 +33,10 @@ $body$
       JOIN account."permission" p ON p."permissionId" = aap."permissionId"
       WHERE aa."actorAccountId" = "@actorAccountId"
       GROUP BY aa."actorAccountId", aa."actorId", aa."accountId", aa."isDefault", aa."isSignatory", a."accountNumber";
+
+      IF NOT FOUND THEN
+        RAISE EXCEPTION 'account.accountNotFound';
+      END IF;
   END
 $body$
 LANGUAGE plpgsql;

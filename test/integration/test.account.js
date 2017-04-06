@@ -1,6 +1,7 @@
 var test = require('ut-run/test')
 var config = require('./../lib/appConfig')
 var uuid = require('uuid/v4')
+var joi = require('joi')
 const ACCOUNT_NUMBER_1 = uuid().slice(0, 20)
 const ACCOUNT_NUMBER_2 = uuid().slice(0, 20)
 const ACCOUNT_NUMBER_3 = uuid().slice(0, 20)
@@ -20,7 +21,7 @@ test({
     return run(test, bus, [
       {
         name: 'Add account 1',
-        method: 'account.account.add',
+        method: 'account.actorAccount.add',
         params: (context) => {
           return {
             'accountNumber': ACCOUNT_NUMBER_1,
@@ -30,21 +31,20 @@ test({
           }
         },
         result: (result, assert) => {
-          assert.deepEquals(
-            result,
-            {
-              'accountNumber': ACCOUNT_NUMBER_1,
-              'actorId': ACCOUNT_ACTOR_ID_1,
-              'isDefault': true,
-              'isSignatory': true
-            },
-            'account 1 successfuly added'
-          )
+          assert.equals(joi.validate(result.body, joi.object().keys({
+            accountId: joi.number(),
+            accountNumber: joi.string().valid(ACCOUNT_NUMBER_1),
+            actorAccountId: joi.number(),
+            actorId: joi.string().valid(ACCOUNT_ACTOR_ID_1),
+            isDefault: joi.boolean().truthy(),
+            isSignatory: joi.boolean().truthy(),
+            permissions: joi.array().valid(['p2p', 'ministatement', 'balanceCheck'])
+          })).error, null, 'account 1 successfuly added')
         }
       },
       {
         name: 'Add account 2',
-        method: 'account.account.add',
+        method: 'account.actorAccount.add',
         params: (context) => {
           return {
             'accountNumber': ACCOUNT_NUMBER_2,
@@ -54,21 +54,20 @@ test({
           }
         },
         result: (result, assert) => {
-          assert.deepEquals(
-            result,
-            {
-              'accountNumber': ACCOUNT_NUMBER_2,
-              'actorId': ACCOUNT_ACTOR_ID_2,
-              'isDefault': true,
-              'isSignatory': true
-            },
-            'account 2 successfuly added'
-          )
+          assert.equals(joi.validate(result.body, joi.object().keys({
+            accountId: joi.number(),
+            accountNumber: joi.string().valid(ACCOUNT_NUMBER_2),
+            actorAccountId: joi.number(),
+            actorId: joi.string().valid(ACCOUNT_ACTOR_ID_2),
+            isDefault: joi.boolean().truthy(),
+            isSignatory: joi.boolean().truthy(),
+            permissions: joi.array().valid(['p2p', 'ministatement', 'balanceCheck'])
+          })).error, null, 'account 2 successfuly added')
         }
       },
       {
         name: 'Add account 3',
-        method: 'account.account.add',
+        method: 'account.actorAccount.add',
         params: (context) => {
           return {
             'accountNumber': ACCOUNT_NUMBER_3,
@@ -78,21 +77,20 @@ test({
           }
         },
         result: (result, assert) => {
-          assert.deepEquals(
-            result,
-            {
-              'accountNumber': ACCOUNT_NUMBER_3,
-              'actorId': ACCOUNT_ACTOR_ID_1,
-              'isDefault': false,
-              'isSignatory': true
-            },
-            'account 3 successfuly added'
-          )
+          assert.equals(joi.validate(result.body, joi.object().keys({
+            accountId: joi.number(),
+            accountNumber: joi.string().valid(ACCOUNT_NUMBER_3),
+            actorAccountId: joi.number(),
+            actorId: joi.string().valid(ACCOUNT_ACTOR_ID_1),
+            isDefault: joi.boolean().truthy(),
+            isSignatory: joi.boolean().truthy(),
+            permissions: joi.array().valid(['p2p', 'ministatement', 'balanceCheck'])
+          })).error, null, 'account 3 successfuly added')
         }
       },
       {
         name: 'Add account without isDefault',
-        method: 'account.account.add',
+        method: 'account.actorAccount.add',
         params: (context) => {
           return {
             'accountNumber': ACCOUNT_NUMBER_4,
@@ -101,21 +99,20 @@ test({
           }
         },
         result: (result, assert) => {
-          assert.deepEquals(
-            result,
-            {
-              'accountNumber': ACCOUNT_NUMBER_4,
-              'actorId': ACCOUNT_ACTOR_ID_2,
-              'isDefault': false,
-              'isSignatory': true
-            },
-            'account without isDefault successfuly added'
-          )
+          assert.equals(joi.validate(result.body, joi.object().keys({
+            accountId: joi.number(),
+            accountNumber: joi.string().valid(ACCOUNT_NUMBER_4),
+            actorAccountId: joi.number(),
+            actorId: joi.string().valid(ACCOUNT_ACTOR_ID_2),
+            isDefault: joi.boolean().falsy(),
+            isSignatory: joi.boolean().truthy(),
+            permissions: joi.array().valid(['p2p', 'ministatement', 'balanceCheck'])
+          })).error, null, 'account without isDefault successfuly added')
         }
       },
       {
         name: 'Add account without isSignatory',
-        method: 'account.account.add',
+        method: 'account.actorAccount.add',
         params: (context) => {
           return {
             'accountNumber': ACCOUNT_NUMBER_5,
@@ -124,73 +121,69 @@ test({
           }
         },
         result: (result, assert) => {
-          assert.deepEquals(
-            result,
-            {
-              'accountNumber': ACCOUNT_NUMBER_5,
-              'actorId': ACCOUNT_ACTOR_ID_2,
-              'isDefault': false,
-              'isSignatory': false
-            },
-            'account without isDefault successfuly added'
-          )
+          assert.equals(joi.validate(result.body, joi.object().keys({
+            accountId: joi.number(),
+            accountNumber: joi.string().valid(ACCOUNT_NUMBER_5),
+            actorAccountId: joi.number(),
+            actorId: joi.string().valid(ACCOUNT_ACTOR_ID_2),
+            isDefault: joi.boolean().falsy(),
+            isSignatory: joi.boolean().falsy(),
+            permissions: joi.array().valid(['p2p', 'ministatement', 'balanceCheck'])
+          })).error, null, 'account without isSignatory successfuly added')
         }
       },
       {
         name: 'Fetch by actorId',
-        method: 'account.account.fetch',
+        method: 'account.actorAccount.fetch',
         params: (context) => {
           return {
             actorId: ACCOUNT_ACTOR_ID_1
           }
         },
         result: (result, assert) => {
-          assert.deepEquals(
-            result,
-            [
-              {
-                'accountNumber': ACCOUNT_NUMBER_1,
-                'actorId': ACCOUNT_ACTOR_ID_1,
-                'isDefault': true,
-                'isSignatory': true
-              },
-              {
-                'accountNumber': ACCOUNT_NUMBER_3,
-                'actorId': ACCOUNT_ACTOR_ID_1,
-                'isDefault': false,
-                'isSignatory': true
-              }
-            ],
-            'fetched by accountId successfuly'
-          )
+          assert.equals(joi.validate(result.body, joi.array().items([{
+            accountId: joi.number(),
+            accountNumber: joi.string().valid(ACCOUNT_NUMBER_1),
+            actorAccountId: joi.number(),
+            actorId: joi.string().valid(ACCOUNT_ACTOR_ID_1),
+            isDefault: joi.boolean().truthy(),
+            isSignatory: joi.boolean().truthy(),
+            permissions: joi.array().valid(['p2p', 'ministatement', 'balanceCheck'])
+          },
+          {
+            accountId: joi.number(),
+            accountNumber: joi.string().valid(ACCOUNT_NUMBER_3),
+            actorAccountId: joi.number(),
+            actorId: joi.string().valid(ACCOUNT_ACTOR_ID_1),
+            isDefault: joi.boolean().falsy(),
+            isSignatory: joi.boolean().truthy(),
+            permissions: joi.array().valid(['p2p', 'ministatement', 'balanceCheck'])
+          }])).error, null, 'fetched by accountId successfuly')
         }
       },
       {
         name: 'Fetch by account number',
-        method: 'account.account.fetch',
+        method: 'account.actorAccount.fetch',
         params: (context) => {
           return {
             accountNumber: ACCOUNT_NUMBER_1
           }
         },
         result: (result, assert) => {
-          assert.deepEquals(
-            result,
-            [
-              {
-                'accountNumber': ACCOUNT_NUMBER_1,
-                'actorId': ACCOUNT_ACTOR_ID_1,
-                'isDefault': true,
-                'isSignatory': true
-              }
-            ],
-            'fetched by actor number successfuly'
-          )
+          assert.equals(joi.validate(result.body, joi.array().items([{
+            accountId: joi.number(),
+            accountNumber: joi.string().valid(ACCOUNT_NUMBER_1),
+            actorAccountId: joi.number(),
+            actorId: joi.string().valid(ACCOUNT_ACTOR_ID_1),
+            isDefault: joi.boolean().truthy(),
+            isSignatory: joi.boolean().truthy(),
+            permissions: joi.array().valid(['p2p', 'ministatement', 'balanceCheck'])
+          }])).error, null, 'fetched by actor number successfuly')
         }
       },
       {
         name: 'Fetch by unknown account number',
-        method: 'account.account.fetch',
+        method: 'account.actorAccount.fetch',
         params: (context) => {
           return {
             accountNumber: ACCOUNT_NUMBER_1 + '1'
@@ -205,29 +198,28 @@ test({
         }
       },
       {
-        name: 'Get by account number',
-        method: 'account.account.get',
+        name: 'Get by actorAccountId',
+        method: 'account.actorAccount.get',
         params: (context) => {
           return {
-            accountNumber: ACCOUNT_NUMBER_1
+            actorAccountId: context['Add account 1'].actorAccountId
           }
         },
         result: (result, assert) => {
-          assert.deepEquals(
-            result,
-            {
-              'accountNumber': ACCOUNT_NUMBER_1,
-              'actorId': ACCOUNT_ACTOR_ID_1,
-              'isDefault': true,
-              'isSignatory': true
-            },
-            'get by actor number successfuly'
-          )
+          assert.equals(joi.validate(result.body, joi.object().keys({
+            accountId: joi.number(),
+            accountNumber: joi.string().valid(ACCOUNT_NUMBER_1),
+            actorAccountId: joi.number(),
+            actorId: joi.string().valid(ACCOUNT_ACTOR_ID_1),
+            isDefault: joi.boolean().truthy(),
+            isSignatory: joi.boolean().truthy(),
+            permissions: joi.array().valid(['p2p', 'ministatement', 'balanceCheck'])
+          })).error, null, 'get by actor number successfuly')
         }
       },
       {
-        name: 'Get by no account number',
-        method: 'account.account.get',
+        name: 'Get by no actorAccountId',
+        method: 'account.actorAccount.get',
         params: (context) => {
           return {}
         },
@@ -240,63 +232,24 @@ test({
         }
       },
       {
-        name: 'Get by no account number',
-        method: 'account.account.get',
+        name: 'Get by wrong actorAccountId',
+        method: 'account.actorAccount.get',
         params: (context) => {
           return {
-            actorId: ACCOUNT_ACTOR_ID_1
+            actorAccountId: context['Add account 1'].actorAccountId * 1330331
           }
         },
         error: (result, assert) => {
           assert.equals(
             result.errorPrint,
             'account.accountNotFound',
-            'get by no account number throws'
+            'get by wrong actorAccountId'
           )
         }
       },
       {
-        name: 'Get by account number and actorId',
-        method: 'account.account.get',
-        params: (context) => {
-          return {
-            accountNumber: ACCOUNT_NUMBER_1,
-            actorId: ACCOUNT_ACTOR_ID_1
-          }
-        },
-        result: (result, assert) => {
-          assert.deepEquals(
-            result,
-            {
-              'accountNumber': ACCOUNT_NUMBER_1,
-              'actorId': ACCOUNT_ACTOR_ID_1,
-              'isDefault': true,
-              'isSignatory': true
-            },
-            'get by actor number and actorId successfuly'
-          )
-        }
-      },
-      {
-        name: 'Get by account number and wrong actorId',
-        method: 'account.account.get',
-        params: (context) => {
-          return {
-            accountNumber: ACCOUNT_NUMBER_1,
-            actorId: ACCOUNT_ACTOR_ID_2
-          }
-        },
-        error: (result, assert) => {
-          assert.equals(
-            result.errorPrint,
-            'account.accountNotFound',
-            'get by account number and wrong actorId throws'
-          )
-        }
-      },
-      {
-        name: 'Edit with missing account number',
-        method: 'account.account.edit',
+        name: 'Edit with missing accountId and actorAccountId',
+        method: 'account.actorAccount.edit',
         params: (context) => {
           return {
             actorId: ACCOUNT_ACTOR_ID_2,
@@ -308,16 +261,16 @@ test({
           assert.equals(
             result.errorPrint,
             'account.accountNotFound',
-            'edit with missing account number throws'
+            'edit with missing accountId and actorAccountId throws'
           )
         }
       },
       {
-        name: 'Edit with missing actorId',
-        method: 'account.account.edit',
+        name: 'Edit with missing actorId and actorAccountId',
+        method: 'account.actorAccount.edit',
         params: (context) => {
           return {
-            accountNumber: ACCOUNT_NUMBER_1,
+            accountId: context['Add account 1'].accountId,
             isDefault: false,
             isSignatory: false
           }
@@ -326,121 +279,103 @@ test({
           assert.equals(
             result.errorPrint,
             'account.accountNotFound',
-            'edit with missing actorId throws'
+            'edit with missing actorId and actorAccountId throws'
           )
         }
       },
       {
         name: 'Edit with missing isSignatory',
-        method: 'account.account.edit',
+        method: 'account.actorAccount.edit',
         params: (context) => {
           return {
-            accountNumber: ACCOUNT_NUMBER_1,
-            actorId: ACCOUNT_ACTOR_ID_1,
+            actorAccountId: context['Add account 1'].actorAccountId,
             isDefault: false
           }
         },
         result: (result, assert) => {
-          assert.deepEquals(
-            result,
-            {
-              'accountNumber': ACCOUNT_NUMBER_1,
-              'actorId': ACCOUNT_ACTOR_ID_1,
-              'isDefault': false,
-              'isSignatory': true
-            },
-            'edit account with missing isSignatory successfuly'
-          )
+          assert.equals(joi.validate(result.body, joi.object().keys({
+            accountId: joi.number(),
+            accountNumber: joi.string().valid(ACCOUNT_NUMBER_1),
+            actorAccountId: joi.number(),
+            actorId: joi.string().valid(ACCOUNT_ACTOR_ID_1),
+            isDefault: joi.boolean().falsy(),
+            isSignatory: joi.boolean().truthy(),
+            permissions: joi.array().valid(['p2p', 'ministatement', 'balanceCheck'])
+          })).error, null, 'edit account with missing isSignatory successfuly')
         }
       },
       {
-        name: 'Edit with missing isSignatory',
-        method: 'account.account.edit',
+        name: 'Edit with missing isDefault',
+        method: 'account.actorAccount.edit',
         params: (context) => {
           return {
-            accountNumber: ACCOUNT_NUMBER_1,
-            actorId: ACCOUNT_ACTOR_ID_1,
+            actorAccountId: context['Add account 1'].actorAccountId,
             isSignatory: false
           }
         },
-        error: (result, assert) => {
-          assert.equals(
-            result.errorPrint,
-            'account.accountNotFound',
-            'edit with missing isSignatory throws'
-          )
+        result: (result, assert) => {
+          assert.equals(joi.validate(result.body, joi.object().keys({
+            accountId: joi.number(),
+            accountNumber: joi.string().valid(ACCOUNT_NUMBER_1),
+            actorAccountId: joi.number(),
+            actorId: joi.string().valid(ACCOUNT_ACTOR_ID_1),
+            isDefault: joi.boolean().falsy(),
+            isSignatory: joi.boolean().truthy(),
+            permissions: joi.array().valid(['p2p', 'ministatement', 'balanceCheck'])
+          })).error, null, 'edit account with missing isDefault successfuly')
         }
       },
       {
         name: 'Edit account',
-        method: 'account.account.edit',
+        method: 'account.actorAccount.edit',
         params: (context) => {
           return {
-            accountNumber: ACCOUNT_NUMBER_1,
-            actorId: ACCOUNT_ACTOR_ID_1,
+            actorAccountId: context['Add account 1'].actorAccountId,
             isDefault: false,
             isSignatory: false
           }
         },
         result: (result, assert) => {
-          assert.deepEquals(
-            result,
-            {
-              'accountNumber': ACCOUNT_NUMBER_1,
-              'actorId': ACCOUNT_ACTOR_ID_1,
-              'isDefault': false,
-              'isSignatory': false
-            },
-            'edit account successfuly'
-          )
+          assert.equals(joi.validate(result.body, joi.object().keys({
+            accountId: joi.number(),
+            accountNumber: joi.string().valid(ACCOUNT_NUMBER_1),
+            actorAccountId: joi.number(),
+            actorId: joi.string().valid(ACCOUNT_ACTOR_ID_1),
+            isDefault: joi.boolean().falsy(),
+            isSignatory: joi.boolean().falsy(),
+            permissions: joi.array().valid(['p2p', 'ministatement', 'balanceCheck'])
+          })).error, null, 'edit account successfuly')
         }
       },
       {
-        name: 'Remove account with missing account number',
-        method: 'account.account.remove',
+        name: 'Remove account with missing actorAccountId',
+        method: 'account.actorAccount.remove',
         params: (context) => {
           return {
-            actorId: ACCOUNT_ACTOR_ID_1
+            actorAccountId: context['Add account 1'].actorAccountId * 1330331
           }
         },
         result: (result, assert) => {
           assert.deepEquals(
             result,
             [],
-            'remove with missing account number'
-          )
-        }
-      },
-      {
-        name: 'Remove account with missing actorId',
-        method: 'account.account.remove',
-        params: (context) => {
-          return {
-            accountNumber: ACCOUNT_NUMBER_1
-          }
-        },
-        result: (result, assert) => {
-          assert.deepEquals(
-            result,
-            [],
-            'remove with missing actorId'
+            'remove with missing actorAccountId'
           )
         }
       },
       {
         name: 'Remove account',
-        method: 'account.account.remove',
+        method: 'account.actorAccount.remove',
         params: (context) => {
           return {
-            accountNumber: ACCOUNT_NUMBER_1,
-            actorId: ACCOUNT_ACTOR_ID_1
+            actorAccountId: context['Add account 1'].actorAccountId
           }
         },
-        result: (result, assert) => {
+        result: function (result, assert) {
           assert.deepEquals(
             result,
             {
-              accountNumber: ACCOUNT_NUMBER_1
+              accountId: this['Add account 1'].accountId
             },
             'remove account successfuly'
           )
