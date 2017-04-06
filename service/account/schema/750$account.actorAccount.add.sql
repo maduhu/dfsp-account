@@ -91,7 +91,7 @@ $body$
     JOIN
       account."role" AS r ON r."roleId" = rp."roleId"
     WHERE
-      r."name" = "@roleName";
+      r."name" = COALESCE("@roleName", 'customer');
 
     RETURN QUERY SELECT * from account."actorAccount.get" ("@actorAccountId");
   END

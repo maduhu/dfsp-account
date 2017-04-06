@@ -14,9 +14,7 @@ BEGIN
     r."name",
     r."description"
   FROM
-     account."role" r
-  WHERE
-    ("@isPublic" IS NULL OR r."isPublic" = "@isPublic");
+     account."role" r;
 END;
 $body$
 LANGUAGE 'plpgsql';

@@ -38,5 +38,12 @@ module.exports = {
     auth: false,
     params: joi.any(),
     result: joi.any()
+  },
+  'role.fetch': {
+    description: 'Fetch roles',
+    notes: '',
+    auth: false,
+    params: joi.any(),
+    result: joi.any()
   }
 }
