@@ -33,7 +33,28 @@ module.exports = {
     result: joi.any()
   },
   'actorAccount.edit': {
-    description: 'Edit account',
+    description: '',
+    notes: '',
+    auth: false,
+    params: joi.any(),
+    result: joi.any()
+  },
+  'actorAccountPermission.add': {
+    description: '',
+    notes: '',
+    auth: false,
+    params: joi.any(),
+    result: joi.any()
+  },
+  'actorAccountPermission.get': {
+    description: '',
+    notes: '',
+    auth: false,
+    params: joi.any(),
+    result: joi.any()
+  },
+  'actorAccountPermission.remove': {
+    description: '',
     notes: '',
     auth: false,
     params: joi.any(),
