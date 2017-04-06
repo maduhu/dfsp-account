@@ -6,17 +6,37 @@
 )
 AS
 $body$
-  WITH a as (
-    DELETE
+  DECLARE "@accountId" bigint;
+  BEGIN
+    WITH a as (
+      DELETE FROM
+        account."actorAccount"
+      WHERE
+        "actorAccountId" = "@actorAccountId"
+      RETURNING *
+    )
+    SELECT
+      a."accountId"
+    INTO
+      "@accountId"
     FROM
-      account."actorAccount"
-    WHERE
-      "actorAccountId" = "@actorAccountId"
-    RETURNING *
-  )
-  SELECT
-    a."accountId",
-	  true AS "isSingleResult"
-  FROM a
+      a;
+
+    IF ("@accountId" IS NULL) THEN
+      RAISE EXCEPTION 'account.accountNotFound';
+    END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM account."actorAccount" aa WHERE aa."accountId" = "@accountId") THEN
+      DELETE FROM
+        account."account" a
+      WHERE
+        a."accountId" = "@accountId";
+    END IF;
+
+    RETURN QUERY
+    SELECT
+      "@accountId" AS "accountId",
+      true AS "isSingleResult";
+  END
 $body$
-LANGUAGE SQL
+LANGUAGE plpgsql;
