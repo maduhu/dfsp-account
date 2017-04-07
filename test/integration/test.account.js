@@ -355,10 +355,10 @@ test({
             actorAccountId: context['Add account 1'].actorAccountId * 1330331
           }
         },
-        result: (result, assert) => {
-          assert.deepEquals(
-            result,
-            [],
+        error: (result, assert) => {
+          assert.equals(
+            result.errorPrint,
+            'account.accountNotFound',
             'remove with missing actorAccountId'
           )
         }
