@@ -1,8 +1,7 @@
 CREATE TABLE account."account"
 (
+  "accountId" bigserial NOT NULL,
   "accountNumber" character varying(25) NOT NULL,
-  "actorId" character varying(25) NOT NULL,
-  "isDefault" boolean DEFAULT false,
-  "isSignatory" boolean DEFAULT false,
-  CONSTRAINT "pkaccountNumber" PRIMARY KEY ("accountNumber", "actorId")
+  CONSTRAINT "pkAccountAccount" PRIMARY KEY ("accountId"),
+  CONSTRAINT "ukAccountAccountNumber" UNIQUE ("accountNumber")
 )

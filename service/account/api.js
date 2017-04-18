@@ -1,6 +1,6 @@
 var joi = require('joi')
 module.exports = {
-  'account.get': {
+  'actorAccount.get': {
     // tags: ['tag1', 'tag2'],
     description: '',
     notes: '',
@@ -8,7 +8,7 @@ module.exports = {
     params: joi.any(),
     result: joi.any()
   },
-  'account.add': {
+  'actorAccount.add': {
     // tags: ['tag1', 'tag2'],
     description: '',
     notes: '',
@@ -16,7 +16,7 @@ module.exports = {
     params: joi.any(),
     result: joi.any()
   },
-  'account.remove': {
+  'actorAccount.remove': {
     // tags: ['tag1', 'tag2'],
     description: '',
     notes: '',
@@ -24,7 +24,7 @@ module.exports = {
     params: joi.any(),
     result: joi.any()
   },
-  'account.fetch': {
+  'actorAccount.fetch': {
     // tags: ['tag1', 'tag2'],
     description: '',
     notes: '',
@@ -32,8 +32,36 @@ module.exports = {
     params: joi.any(),
     result: joi.any()
   },
-  'account.edit': {
-    description: 'Edit account',
+  'actorAccount.edit': {
+    description: '',
+    notes: '',
+    auth: false,
+    params: joi.any(),
+    result: joi.any()
+  },
+  'actorAccountPermission.add': {
+    description: '',
+    notes: '',
+    auth: false,
+    params: joi.any(),
+    result: joi.any()
+  },
+  'actorAccountPermission.get': {
+    description: '',
+    notes: '',
+    auth: false,
+    params: joi.any(),
+    result: joi.any()
+  },
+  'actorAccountPermission.remove': {
+    description: '',
+    notes: '',
+    auth: false,
+    params: joi.any(),
+    result: joi.any()
+  },
+  'role.fetch': {
+    description: 'Fetch roles',
     notes: '',
     auth: false,
     params: joi.any(),

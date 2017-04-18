@@ -32,7 +32,7 @@
     "version": "ut-version"
   },
   "dependencies": {
-    "joi": "9.1.1",
+    "joi": "10.4.1",
     "pm2": "2.0.18",
     "ut-bus": "^5.7.0",
     "ut-error": "^5.3.16",
