@@ -1,3 +1,22 @@
+<a name="0.8.0"></a>
+# [0.8.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.7.2...v0.8.0) (2017-04-18)
+
+
+### Bug Fixes
+
+* add methods for adding, removing and listing permissions for a given actorAccountId ([394eaed](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/394eaed))
+* add role.fetch api validation ([be030fd](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/be030fd))
+* integration test ([d79ad31](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/d79ad31))
+* integration tests after db redesign ([3291b73](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/3291b73))
+* remove account if there are no actorAccount relations with this account ([e782fea](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/e782fea))
+
+
+### Features
+
+* refactor account db to add roles and permissions on identity/account level ([756df34](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/756df34))
+
+
+
 <a name="0.7.2"></a>
 ## [0.7.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.7.1...v0.7.2) (2017-04-05)
 
