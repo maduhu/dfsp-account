@@ -1,3 +1,14 @@
+<a name="0.8.2"></a>
+## [0.8.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.8.1...v0.8.2) (2017-04-21)
+
+
+### Bug Fixes
+
+* add shrinkwrap ([4afea87](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/4afea87))
+* shrinkwrap private nexus links ([d7b47e2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/d7b47e2))
+
+
+
 <a name="0.8.1"></a>
 ## [0.8.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.8.0...v0.8.1) (2017-04-20)
 
