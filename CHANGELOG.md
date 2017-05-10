@@ -1,3 +1,13 @@
+<a name="0.9.1"></a>
+## [0.9.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.0...v0.9.1) (2017-05-10)
+
+
+### Bug Fixes
+
+* change logmode to long ([7a920d1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/7a920d1))
+
+
+
 <a name="0.9.0"></a>
 # [0.9.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.8.2...v0.9.0) (2017-05-10)
 
