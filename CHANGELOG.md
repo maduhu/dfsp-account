@@ -1,3 +1,18 @@
+<a name="0.9.0"></a>
+# [0.9.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.8.2...v0.9.0) (2017-05-10)
+
+
+### Bug Fixes
+
+* remove colors from stdout by default ([ebf28a6](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/ebf28a6))
+
+
+### Features
+
+* update pm2 ([135f910](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/135f910))
+
+
+
 <a name="0.8.2"></a>
 ## [0.8.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.8.1...v0.8.2) (2017-04-21)
 
