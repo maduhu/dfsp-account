@@ -1,3 +1,13 @@
+<a name="0.9.2"></a>
+## [0.9.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.1...v0.9.2) (2017-05-15)
+
+
+### Bug Fixes
+
+* elk ([c70d808](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/c70d808))
+
+
+
 <a name="0.9.1"></a>
 ## [0.9.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.0...v0.9.1) (2017-05-10)
 

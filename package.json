@@ -1,6 +1,6 @@
 {
   "name": "@leveloneproject/dfsp-account",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "DFSP Account service",
   "main": "index.js",
   "scripts": {
