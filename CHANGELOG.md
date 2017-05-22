@@ -1,3 +1,13 @@
+<a name="0.9.4"></a>
+## [0.9.4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.3...v0.9.4) (2017-05-22)
+
+
+### Bug Fixes
+
+* log configuration ([398f0f6](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/398f0f6))
+
+
+
 <a name="0.9.3"></a>
 ## [0.9.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.2...v0.9.3) (2017-05-19)
 
