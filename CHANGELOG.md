@@ -1,3 +1,14 @@
+<a name="0.9.5"></a>
+## [0.9.5](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.4...v0.9.5) (2017-05-26)
+
+
+### Bug Fixes
+
+* merge ([242ecf5](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/242ecf5))
+* update ut-tools ([03b2c54](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/03b2c54))
+
+
+
 <a name="0.9.4"></a>
 ## [0.9.4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.3...v0.9.4) (2017-05-22)
 
