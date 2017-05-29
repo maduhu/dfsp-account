@@ -1,3 +1,13 @@
+<a name="0.9.12"></a>
+## [0.9.12](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.11...v0.9.12) (2017-05-29)
+
+
+### Bug Fixes
+
+* force build ([83e90c5](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/83e90c5))
+
+
+
 <a name="0.9.11"></a>
 ## [0.9.11](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.10...v0.9.11) (2017-05-29)
 
