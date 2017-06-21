@@ -41,7 +41,7 @@ BEGIN
     SET
       "isDefault" = false
     WHERE
-      aa."actorId" = (SELECT "actorId" FROM account."actorAccount" WHERE "actorAccountId" = "@actorAccountId");
+      aa."actorId" = (SELECT aacc."actorId" FROM account."actorAccount" aacc WHERE aacc."actorAccountId" = "@actorAccountId");
   END IF;
 
   UPDATE account."actorAccount" aa
