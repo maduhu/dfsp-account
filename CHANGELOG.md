@@ -1,3 +1,13 @@
+<a name="0.9.17"></a>
+## [0.9.17](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.16...v0.9.17) (2017-06-22)
+
+
+### Bug Fixes
+
+* fix ambiguous column reference ([44aa93d](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/44aa93d))
+
+
+
 <a name="0.9.16"></a>
 ## [0.9.16](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.15...v0.9.16) (2017-06-20)
 
