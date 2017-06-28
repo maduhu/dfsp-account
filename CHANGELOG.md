@@ -1,3 +1,13 @@
+<a name="0.9.19"></a>
+## [0.9.19](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.18...v0.9.19) (2017-06-28)
+
+
+### Bug Fixes
+
+* ut-bus version ([c6b9f01](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/c6b9f01))
+
+
+
 <a name="0.9.18"></a>
 ## [0.9.18](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.17...v0.9.18) (2017-06-28)
 
