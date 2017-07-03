@@ -1,6 +1,6 @@
+require('./error')
 var joi = require('joi')
 var path = require('path')
-// var error = require('./error')
 var db = null
 module.exports = {
   schema: [{
