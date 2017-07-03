@@ -226,7 +226,7 @@ test({
         error: (result, assert) => {
           assert.equals(
             result.errorPrint,
-            'account.accountNotFound',
+            'Account not found',
             'get by no account number throws'
           )
         }
@@ -242,7 +242,7 @@ test({
         error: (result, assert) => {
           assert.equals(
             result.errorPrint,
-            'account.accountNotFound',
+            'Account not found',
             'get by wrong actorAccountId'
           )
         }
@@ -260,7 +260,7 @@ test({
         error: (result, assert) => {
           assert.equals(
             result.errorPrint,
-            'account.accountNotFound',
+            'Account not found',
             'edit with missing accountId and actorAccountId throws'
           )
         }
@@ -278,7 +278,7 @@ test({
         error: (result, assert) => {
           assert.equals(
             result.errorPrint,
-            'account.accountNotFound',
+            'Account not found',
             'edit with missing actorId and actorAccountId throws'
           )
         }
@@ -348,6 +348,16 @@ test({
         }
       },
       {
+        name: 'Edit account - missing data',
+        method: 'account.actorAccount.edit',
+        params: (context) => {
+          return {}
+        },
+        error: (error, assert) => {
+          assert.equals(error.errorPrint, 'Account not found', 'Check account not found error')
+        }
+      },
+      {
         name: 'Remove account with missing actorAccountId',
         method: 'account.actorAccount.remove',
         params: (context) => {
@@ -358,7 +368,7 @@ test({
         error: (result, assert) => {
           assert.equals(
             result.errorPrint,
-            'account.accountNotFound',
+            'Account not found',
             'remove with missing actorAccountId'
           )
         }
