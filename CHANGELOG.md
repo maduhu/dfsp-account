@@ -1,3 +1,13 @@
+<a name="0.9.21"></a>
+## [0.9.21](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.20...v0.9.21) (2017-07-03)
+
+
+### Bug Fixes
+
+* add test for sql inspect ([c14527c](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/c14527c))
+
+
+
 <a name="0.9.20"></a>
 ## [0.9.20](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.19...v0.9.20) (2017-07-03)
 
