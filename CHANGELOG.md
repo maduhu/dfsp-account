@@ -1,3 +1,13 @@
+<a name="0.9.20"></a>
+## [0.9.20](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.19...v0.9.20) (2017-07-03)
+
+
+### Bug Fixes
+
+* add missing errors ([4899f61](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/4899f61))
+
+
+
 <a name="0.9.19"></a>
 ## [0.9.19](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.18...v0.9.19) (2017-06-28)
 
