@@ -1,4 +1,4 @@
-require('./error')
+const error = require('./error')
 var joi = require('joi')
 var path = require('path')
 var db = null
@@ -42,5 +42,8 @@ module.exports = {
         }
       }
     })
+  },
+  'actorAccount.get.error.receive': function (msg) {
+    throw error['account.accountNotFound']()
   }
 }

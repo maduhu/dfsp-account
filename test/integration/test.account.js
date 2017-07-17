@@ -227,7 +227,7 @@ test({
           assert.equals(
             result.errorPrint,
             'Account not found',
-            'get by no account number throws'
+            'Get actor account with missing actorAccountId'
           )
         }
       },
