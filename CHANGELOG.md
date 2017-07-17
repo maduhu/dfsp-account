@@ -1,3 +1,13 @@
+<a name="0.9.22"></a>
+## [0.9.22](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.21...v0.9.22) (2017-07-17)
+
+
+### Bug Fixes
+
+* refactor error handling ([e530e05](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/e530e05))
+
+
+
 <a name="0.9.21"></a>
 ## [0.9.21](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.20...v0.9.21) (2017-07-03)
 
