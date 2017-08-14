@@ -1,3 +1,14 @@
+<a name="0.9.24"></a>
+## [0.9.24](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.23...v0.9.24) (2017-08-14)
+
+
+### Bug Fixes
+
+* fix typo in comment ([1b41283](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/1b41283))
+* remove sql inspect ([23dde56](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/23dde56))
+
+
+
 <a name="0.9.23"></a>
 ## [0.9.23](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.22...v0.9.23) (2017-07-21)
 
