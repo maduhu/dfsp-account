@@ -4,7 +4,7 @@ module.exports = {
   createPort: require('ut-port-httpserver'),
   logLevel: 'trace',
   api: ['account'],
-  imports: ['account.start'],
+  // imports: ['account.start'], removed due to increasing the code coverage
   port: 8009,
   allowXFF: true,
   disableXsrf: {
