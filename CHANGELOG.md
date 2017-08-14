@@ -1,3 +1,13 @@
+<a name="0.9.25"></a>
+## [0.9.25](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.24...v0.9.25) (2017-08-14)
+
+
+### Bug Fixes
+
+* remove unused conditions - increase code coverage ([1968aa4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/commit/1968aa4))
+
+
+
 <a name="0.9.24"></a>
 ## [0.9.24](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-account/compare/v0.9.23...v0.9.24) (2017-08-14)
 
